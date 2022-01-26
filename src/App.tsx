@@ -1,5 +1,10 @@
 import React from "react";
+import { PageHeader } from "./components/PageHeader";
 
 export const App = () => {
-  return <h1>Hello world</h1>;
+  return (
+    <>
+      <PageHeader></PageHeader>
+    </>
+  );
 };
