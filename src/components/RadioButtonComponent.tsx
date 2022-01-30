@@ -1,8 +1,8 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState, memo } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import styled from "styled-components";
 
-export const RadioButtonComponent = () => {
+export const RadioButtonComponent = memo(() => {
   const [configFlg, setConfigFlg] = useState<string>("0");
 
   const onChangeConfigFlg = (e: ChangeEvent<HTMLInputElement>) => {
@@ -44,7 +44,7 @@ export const RadioButtonComponent = () => {
       <Paragraph />
     </>
   );
-};
+});
 
 const Paragraph = styled.div`
   margin-top: 10px;

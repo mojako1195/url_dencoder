@@ -1,12 +1,13 @@
+import { memo } from "react";
 import styled from "styled-components";
 
-export const PageHeader = () => {
+export const PageHeader = memo(() => {
   return (
     <HeadContainer>
       <TitleText>URLでんこーだー</TitleText>
     </HeadContainer>
   );
-};
+});
 
 const HeadContainer = styled.div`
   background-color: #0d6efd;

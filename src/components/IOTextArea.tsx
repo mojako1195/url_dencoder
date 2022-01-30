@@ -1,10 +1,10 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState, memo } from "react";
 import styled from "styled-components";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
 
-export const IOTextArea = () => {
+export const IOTextArea = memo(() => {
   const [beforeText, setBeforeText] = useState<string>("");
   const [afterText, setAfterText] = useState<string>("");
   const MySwal = withReactContent(Swal);
@@ -70,7 +70,7 @@ export const IOTextArea = () => {
       </Row>
     </Container>
   );
-};
+});
 
 const TiTleStyle = styled.div`
   font-weight: bold;

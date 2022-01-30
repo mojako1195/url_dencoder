@@ -1,9 +1,9 @@
-import React from "react";
+import { memo } from "react";
 import { PageHeader } from "./components/PageHeader";
 import { IOTextArea } from "./components/IOTextArea";
 import { RadioButtonComponent } from "./components/RadioButtonComponent";
 
-export const App = () => {
+export const App = memo(() => {
   return (
     <>
       <PageHeader />
@@ -11,4 +11,4 @@ export const App = () => {
       <IOTextArea />
     </>
   );
-};
+});
