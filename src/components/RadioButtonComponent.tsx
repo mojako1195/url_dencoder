@@ -1,9 +1,10 @@
-import { ChangeEvent, useState, memo } from "react";
+import { ChangeEvent, useState, memo, useContext } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import styled from "styled-components";
+import { ConfigFlgContext } from "./providers/ConfigFlgProvider";
 
 export const RadioButtonComponent = memo(() => {
-  const [configFlg, setConfigFlg] = useState<string>("0");
+  const { configFlg, setConfigFlg } = useContext(ConfigFlgContext);
 
   const onChangeConfigFlg = (e: ChangeEvent<HTMLInputElement>) => {
     setConfigFlg(e.target.value);

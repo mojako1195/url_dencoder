@@ -1,16 +1,19 @@
-import { ChangeEvent, useState, memo } from "react";
+import { ChangeEvent, useState, useContext, memo } from "react";
 import styled from "styled-components";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
+import { ConfigFlgContext } from "./providers/ConfigFlgProvider";
 
 export const IOTextArea = memo(() => {
   const [beforeText, setBeforeText] = useState<string>("");
   const [afterText, setAfterText] = useState<string>("");
+  const { configFlg } = useContext(ConfigFlgContext);
   const MySwal = withReactContent(Swal);
 
-  const onChangeBeforeText = (e: ChangeEvent<HTMLInputElement>) =>
+  const onChangeBeforeText = (e: ChangeEvent<HTMLInputElement>) => {
     setBeforeText(e.target.value);
+  };
 
   const onClickCopyBtn = () => {
     navigator.clipboard.writeText(afterText).then(
@@ -28,7 +31,16 @@ export const IOTextArea = memo(() => {
   };
 
   const onClickConvBtn = () => {
-    setAfterText(beforeText);
+    switch (configFlg) {
+      case "0":
+        setAfterText(encodeURI(beforeText));
+        break;
+      case "1":
+        setAfterText(decodeURI(beforeText));
+        break;
+      default:
+        break;
+    }
   };
 
   return (

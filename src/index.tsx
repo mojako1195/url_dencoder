@@ -3,10 +3,13 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import { App } from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { ConfigFlgProvider } from "./components/providers/ConfigFlgProvider";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ConfigFlgProvider>
+      <App />
+    </ConfigFlgProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
