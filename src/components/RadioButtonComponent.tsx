@@ -20,7 +20,7 @@ export const RadioButtonComponent = memo(() => {
               type="radio"
               id="encodeBtn"
               name="configBtn"
-              label="エンコード（あ → %E3%81%82）"
+              label="エンコード（あ ⇒ %E3%81%82）"
               value="0"
               checked={configFlg == "0"}
               onChange={onChangeConfigFlg}
@@ -34,7 +34,7 @@ export const RadioButtonComponent = memo(() => {
               type="radio"
               id="decodeBtn"
               name="configBtn"
-              label="デコード（%E3%81%82 → あ）"
+              label="デコード（%E3%81%82 ⇒ あ）"
               value="1"
               checked={configFlg == "1"}
               onChange={onChangeConfigFlg}
